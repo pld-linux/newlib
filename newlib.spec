@@ -1,4 +1,5 @@
 Summary:	C library intended for use on embedded systems
+Summary(pl):	Biblioteka C przeznaczona dla systemów wbudowanych
 Name:		newlib
 Version:	1.14.0
 Release:	0.1
@@ -15,6 +16,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Newlib is a C library intended for use on embedded systems. It is a
 conglomeration of several library parts, all under free software
 licenses that make them easily usable on embedded products.
+
+%description -l pl
+Newlib to biblioteka C przeznaczona dla systemów wbudowanych. Jest
+po³±czeniem kilku czê¶ci biblioteki, wszystkich na wolnych licencjach
+pozwalaj±cych na ³atwe u¿ycie w produktach wbudowanych.
 
 %prep
 %setup -q
