@@ -1,5 +1,5 @@
 Summary:	C library intended for use on embedded systems
-Summary(pl.UTF-8):   Biblioteka C przeznaczona dla systemów wbudowanych
+Summary(pl.UTF-8):	Biblioteka C przeznaczona dla systemów wbudowanych
 Name:		newlib
 Version:	1.14.0
 Release:	0.1
