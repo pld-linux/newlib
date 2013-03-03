@@ -1,16 +1,19 @@
 Summary:	C library intended for use on embedded systems
 Summary(pl.UTF-8):	Biblioteka C przeznaczona dla systemów wbudowanych
 Name:		newlib
-Version:	1.16.0
+Version:	1.20.0
 Release:	0.1
 License:	GPL v2
 Group:		Libraries
 Source0:	ftp://sources.redhat.com/pub/newlib/%{name}-%{version}.tar.gz
-# Source0-md5:	bf8f1f9e3ca83d732c00a79a6ef29bc4
+# Source0-md5:	e5488f545c46287d360e68a801d470e8
 URL:		http://sources.redhat.com/newlib/
-BuildRequires:	autoconf
-BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# use single prefix as multilib is supported inside
+%define		newlibdir	/usr/lib/newlib
+%define		_exec_prefix	%{newlibdir}
+%define		tooldir		%{_exec_prefix}/%{_target_alias}
 
 %description
 Newlib is a C library intended for use on embedded systems. It is a
@@ -26,15 +29,8 @@ pozwalających na łatwe użycie w produktach wbudowanych.
 %setup -q
 
 %build
-%{__aclocal}
-%{__autoconf}
-%configure
-
-cd etc
-%{__aclocal}
-%{__autoconf}
-%configure
-cd ..
+%configure \
+	--with-newlib
 
 %{__make}
 
@@ -43,11 +39,19 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# common gnu-standards files
+%{__rm} $RPM_BUILD_ROOT%{_infodir}/{configure,standards}.info*
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog MAINTAINERS README README-maintainer-mode
-%{_infodir}/configure.info*
-%{_infodir}/standards.info*
+%doc COPYING.LIBGLOSS COPYING.NEWLIB ChangeLog MAINTAINERS newlib/{NEWS,README}
+%dir %{newlibdir}
+%dir %{tooldir}
+%{tooldir}/include
+%dir %{tooldir}/lib
+%{tooldir}/lib/libc.a
+%{tooldir}/lib/libg.a
+%{tooldir}/lib/libm.a
