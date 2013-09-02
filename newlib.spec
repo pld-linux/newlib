@@ -1,12 +1,12 @@
 Summary:	C library intended for use on embedded systems
 Summary(pl.UTF-8):	Biblioteka C przeznaczona dla systemów wbudowanych
 Name:		newlib
-Version:	1.20.0
+Version:	2.0.0
 Release:	0.1
 License:	GPL v2
 Group:		Libraries
 Source0:	ftp://sources.redhat.com/pub/newlib/%{name}-%{version}.tar.gz
-# Source0-md5:	e5488f545c46287d360e68a801d470e8
+# Source0-md5:	e3e936235e56d6a28afb2a7f98b1a635
 URL:		http://sources.redhat.com/newlib/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
