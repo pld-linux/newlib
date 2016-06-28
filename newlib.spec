@@ -1,12 +1,12 @@
 Summary:	C library intended for use on embedded systems
 Summary(pl.UTF-8):	Biblioteka C przeznaczona dla systemów wbudowanych
 Name:		newlib
-Version:	2.1.0
+Version:	2.4.0
 Release:	0.1
 License:	GPL v2
 Group:		Libraries
 Source0:	ftp://sources.redhat.com/pub/newlib/%{name}-%{version}.tar.gz
-# Source0-md5:	c6559d83ecce4728a52f0ce7ec80de97
+# Source0-md5:	37c07a65c6effdb4822fb6f83067f37e
 URL:		http://sources.redhat.com/newlib/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,9 +38,6 @@ pozwalających na łatwe użycie w produktach wbudowanych.
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-# common gnu-standards files
-%{__rm} $RPM_BUILD_ROOT%{_infodir}/{configure,standards}.info*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
