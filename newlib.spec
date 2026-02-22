@@ -1,13 +1,13 @@
 Summary:	C library intended for use on embedded systems
 Summary(pl.UTF-8):	Biblioteka C przeznaczona dla systemów wbudowanych
 Name:		newlib
-Version:	3.1.0
+Version:	4.1.0
 Release:	0.1
 License:	GPL v2
 Group:		Libraries
-Source0:	ftp://sourceware.org/pub/newlib/%{name}-%{version}.tar.gz
-# Source0-md5:	f84263b7d524df92a9c9fb30b79e0134
-URL:		http://www.sourceware.org/newlib/
+Source0:	https://sourceware.org/pub/newlib/%{name}-%{version}.tar.gz
+# Source0-md5:	5702b0f26f8d5613b703d64bb97b2790
+URL:		https://www.sourceware.org/newlib/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # use single prefix as multilib is supported inside
